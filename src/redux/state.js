@@ -8,7 +8,7 @@ let state = {
       {id:3, message: 'I like to listen to the indie music', likesCount: 11},
       {id:4, message: 'Tired...', likesCount: 0},
     ],
-    newPostText: ''
+    newPostText: '',
   },
   messagesPage: {
     messages : [
@@ -19,6 +19,7 @@ let state = {
       {id:5, message: 'LOL'},
       {id:6, message: 'See you soon'},
     ],
+    newMessageText: '',
     dialogs : [
       {id:1, name: 'Inna'},
       {id:2, name: 'Dmytro'},
@@ -45,4 +46,20 @@ export let updateNewPostText = (newText) => {
   state.profilePage.newPostText = newText;
   rerenderEntireTree(state);
 }
+
+export let addMessage = () => {
+  let newMessage = {
+    id: 7,
+    message: state.messagesPage.newMessageText,
+  }
+  state.messagesPage.messages.push(newMessage);
+  state.messagesPage.newMessageText = '';
+  rerenderEntireTree(state);
+}
+export let updateNewMessageText = (newText) => {
+  state.messagesPage.newMessageText= newText;
+  rerenderEntireTree(state);
+}
+
+
 export default state;
