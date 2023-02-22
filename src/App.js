@@ -8,6 +8,7 @@ import Navbar from "./components/Navbar/Navbar";
 import News from "./components/News/News";
 import Profile from "./components/Profile/Profile";
 import Settings from "./components/Settings/Settings";
+import Users from "./components/Users/Users";
 
 
 
@@ -21,6 +22,7 @@ const App = () => {
         <Routes>
           <Route path="/profile/*" element={<Profile />} />
           <Route path="/dialogs/*" element= {<DialogsContainer />} />
+          <Route path="/users/*" element= {<Users />} />
           <Route path="/news/*" element={<News/>} />
           <Route path="/music/*" element= {<Music/>} />
           <Route path="/settings/*" element={<Settings/>} />
