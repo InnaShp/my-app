@@ -4,7 +4,7 @@ import s from "./MyPosts.module.css";
 
 
 const MyPosts = (props) => {
-  let postElements = props.posts.map( p => <MyPost message={p.message} likesCount={p.likesCount} />)
+  let postElements = props.posts.map( p => <MyPost message={p.message} key={p.id} likesCount={p.likesCount} />)
   
   let newPostElement = React.createRef(); 
 
@@ -15,7 +15,7 @@ const MyPosts = (props) => {
     let text =  newPostElement.current.value;
     props.updateNewPostText(text);
   } 
-
+  
   return (
     <div className={s.postsBlock}> 
       <div>
