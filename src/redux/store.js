@@ -36,7 +36,7 @@ let store = {
     sideBar: {}
   },
   _callSubscriber() {
-    console.log("State changed");
+    
   },
 
   getState () {
